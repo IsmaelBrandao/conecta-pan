@@ -53,13 +53,16 @@ git push -u origin main
 ---
 
 ## 3. Frontend no Vercel
-1. https://vercel.com → **Add New → Project** → importe o repo.
-2. Configure:
-   - **Root Directory:** `client`
-   - Framework: **Vite** (detecta sozinho)
+1. https://vercel.com → **Add New → Project** → importe o repo do GitHub.
+2. Na tela de configuração:
+   - **Root Directory:** clique em *Edit* e selecione **`client`** (importante — o `vercel.json` está dentro dessa pasta)
+   - **Framework Preset:** Vite (detecta sozinho)
+   - **Build Command / Output Directory / Install Command:** deixe automático (o `client/vercel.json` já define).
 3. Em **Environment Variables**, adicione:
-   - `VITE_SERVER_URL` = a URL do backend no Render (passo 2.4)
-4. **Deploy**. Copie a URL final (ex: `https://conecta-pan.vercel.app`).
+   - `VITE_SERVER_URL` = URL pública do backend no Render (ex: `https://conecta-pan.onrender.com`)
+4. Clique **Deploy**. Copie a URL final (ex: `https://conecta-pan.vercel.app`).
+
+> Cada `git push` para a `main` dispara redeploy automático no Vercel.
 
 ---
 
